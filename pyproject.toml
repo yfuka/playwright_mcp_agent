@@ -1,0 +1,26 @@
+[project]
+name = "playwright-mcp-agent"
+version = "0.1.0"
+description = "Local LLM + MCP (Playwright & Chrome DevTools) web research agent"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.21.1",
+    "openai>=2.8.0",
+    "pandas>=2.3.3",
+    "python-dotenv>=1.0.1",
+    "streamlit>=1.51.0",
+]
+
+[project.scripts]
+playwright-mcp-agent = "playwright_mcp_agent.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.uv]
+package = true
